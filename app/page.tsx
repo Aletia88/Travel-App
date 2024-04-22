@@ -6,6 +6,7 @@ import { Tips } from "@/components/Tips";
 import { TravelTips } from "@/components/Travel-Tips";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import CarouselComp from "@/components/CarouselComp";
+import Link from "next/link";
 
 type Props = {};
 
@@ -37,14 +38,14 @@ export default function Home(props: Props) {
               />
               <p>Group Travel</p>
             </div>
-            <div className="flex flex-col justify-center items-center">
+            <Link href="/private-trips" className="flex flex-col justify-center items-center">
               <img
                 src="/Private travel.png"
                 className="rounded-full pb-3  w-[80%]"
                 alt=""
               />
               <p>Private Travel</p>
-            </div>
+            </Link>
           </div>
         </div>
         <p className="  py-12 text-white md:w-[60%] px-8">
@@ -75,12 +76,12 @@ export default function Home(props: Props) {
         <CarouselComp />
       
         
-        <div className="  pb-10  self-center bg-black justify-center flex flex-col items-center">
+        <Link href="/UpcomingTrips" className="  pb-10  self-center bg-black justify-center flex flex-col items-center">
 
         <button className="px-4 py-2 backdrop-blur-sm border border-white rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.9] text-sm transition duration-200 mb-8  flex items-center gap-2 mt-4">
           See All Trips <IoIosSearch />
         </button>
-      </div>
+      </Link>
       {/* <NoScroll /> */}
       <Scroll />
 
