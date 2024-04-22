@@ -5,6 +5,7 @@ import { useGetTripsQuery } from "@/store/rutas.api";
 import { Pagination } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
+import Test from '../../data/Test.json'
 
 type Props = {};
 
@@ -23,7 +24,7 @@ const page = (props: Props) => {
   } else if (isSuccess) {
     content = (
       <div className="grid grid-cols-3 gap-4">
-        {trips.items?.map((trip: any) => (
+        {Test.items?.map((trip: any) => (
           <div key={trip.id} className="flex flex-col">
             <Link href={`/UpcomingTrips/${trip.id}`}>
               <div>
