@@ -60,7 +60,7 @@ const page = (props: Props) => {
       </p>
       {content}
 
-      <Pagination total={trips.total} mt="sm" />
+      {/* <Pagination  mt="sm" /> */}
     </div>
   );
 };
