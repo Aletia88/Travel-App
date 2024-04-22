@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
 import { TextR } from "./TextR";
+import Link from "next/link";
 
 export function ImagesSliders() {
   const images = [
@@ -30,10 +31,12 @@ export function ImagesSliders() {
         <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
           <TextR />
         </motion.p>
+        <Link href="/private-trip">
         <motion.button className="px-4 py-2  backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full absolute mt-64">
           <span>Trip now →</span>
           <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
         </motion.button>
+        </Link>
       </motion.div>
     </ImagesSlider>
   );
