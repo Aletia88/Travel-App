@@ -13,10 +13,10 @@ export function TextR() {
         text="Immerse yourself in the adventure and discover the essence of each place!"
         revealText=" Immerse yourself in the adventure and discover the essence of each place!"
       >
-        <TextRevealCardTitle>
+        <TextRevealCardTitle children={undefined}>
             
         </TextRevealCardTitle>
-        <TextRevealCardDescription>
+        <TextRevealCardDescription children={undefined}>
        
         </TextRevealCardDescription>
       </TextRevealCard>
