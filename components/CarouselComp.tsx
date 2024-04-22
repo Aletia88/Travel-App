@@ -3,7 +3,6 @@ import React from 'react'
 import Carousel from "react-multi-carousel";
   import "react-multi-carousel/lib/styles.css";
 import { TripCard } from './TripCard';
-import { TripCardTest } from './TripCardTest';
 import Link from 'next/link';
 import Loading from './Home/Loading';
 import { useGetTripsQuery } from '@/store/rutas.api';

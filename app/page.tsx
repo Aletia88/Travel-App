@@ -1,19 +1,11 @@
 "use client";
 import { ImagesSliders } from "@/components/ImageSliders";
-import { TextGenerate } from "@/components/Text";
-import { TripCard } from "@/components/TripCard";
 import { IoIosSearch } from "react-icons/io";
-import { Button } from "@mantine/core";
 import { Scroll } from "@/components/Scroll";
-import { Testimonials } from "@/components/Testimonials";
 import { Tips } from "@/components/Tips";
 import { TravelTips } from "@/components/Travel-Tips";
-import NoScroll from "@/components/NoScroll";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import CarouselComp from "@/components/CarouselComp";
-import Link from "next/link";
-import { useGetTripsQuery } from "@/store/rutas.api";
-import Loading from "@/components/Home/Loading";
 
 type Props = {};
 
