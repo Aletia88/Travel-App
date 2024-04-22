@@ -28,7 +28,8 @@ interface Trip {
   photos: string[];
 }
 
-const UpcomingTrips: React.FC<{ context: Trip }> = ({ context }) => {
+
+const UpcomingTrips: React.FC = () => {
   let content: JSX.Element | null;
   const handleEditItinerary = (value: any) => {
     // setEditItinerary(value);
