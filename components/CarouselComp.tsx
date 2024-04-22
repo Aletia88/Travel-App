@@ -46,7 +46,7 @@ function CarouselComp() {
       </div>
 
       <div>
-      { trips && <Carousel
+      { Test && <Carousel
           swipeable={true}
           draggable={true}
           showDots={false}
