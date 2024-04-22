@@ -103,8 +103,7 @@ export default function Home(props: Props) {
           Posts.
         </p>
       </div>
-{/* {content} */}
-<CarouselComp />
+  <TravelTips />
       {/* </div> */}
 
       <div className=" text-black bg-white flex w-full items-center justify-center flex-col p-5 pt-14">

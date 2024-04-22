@@ -1,6 +1,6 @@
 "use client"
 import * as React from "react";
-import countries from "../../data/countries.json";
+import countries from "../../data/Countries.json";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
