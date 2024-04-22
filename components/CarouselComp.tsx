@@ -6,6 +6,7 @@ import { TripCard } from './TripCard';
 import Link from 'next/link';
 import Loading from './Home/Loading';
 import { useGetTripsQuery } from '@/store/rutas.api';
+import Test from '../data/Test.json'
 
 function CarouselComp() {
   
@@ -64,7 +65,7 @@ function CarouselComp() {
           itemClass="carousel-item-padding-40-px"
         >
 
-{trips && trips.items?.map((trip: any) => (
+{Test && Test.items?.map((trip: any) => (
     <div key={trip.id} className="flex flex-col">
       <Link href={`/UpcomingTrips/${trip.id}`}>
         <div>
