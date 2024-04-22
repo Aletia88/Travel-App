@@ -28,7 +28,8 @@ interface Trip {
   photos: string[];
 }
 
-const UpcomingTrips: React.FC<{ context: any }> = ({ context }) => {
+const UpcomingTrips: React.FC<{ context: Trip }> = ({ context }) => {
+  let content: JSX.Element | null;
   const handleEditItinerary = (value: any) => {
     // setEditItinerary(value);
     ("context")
@@ -45,7 +46,7 @@ const UpcomingTrips: React.FC<{ context: any }> = ({ context }) => {
     error,
   } = useGetTripQuery(id);
 
-  let content: JSX.Element | null;
+  
    if (isLoading) {
      content = <Loading />
    } else if (isSuccess) {
@@ -81,7 +82,7 @@ const UpcomingTrips: React.FC<{ context: any }> = ({ context }) => {
     </>
   );
 } else if (isError) {
-  content = <p>{error}</p>;
+  // content = <p>{error}</p>;
 }
 return (
   <>
