@@ -1,7 +1,6 @@
-'use client'
+"use client";
 import * as React from "react";
 import { useState, useEffect } from "react";
-
 
 import axios from "axios";
 import Loading from "@/components/Home/Loading";
@@ -28,12 +27,11 @@ interface Trip {
   photos: string[];
 }
 
-
 const UpcomingTrips: React.FC = () => {
-  let content: JSX.Element | null;
+  let content: JSX.Element | null = null;
   const handleEditItinerary = (value: any) => {
     // setEditItinerary(value);
-    ("context")
+    ("context");
   };
 
   const router = useRouter();
@@ -47,55 +45,44 @@ const UpcomingTrips: React.FC = () => {
     error,
   } = useGetTripQuery(id);
 
-  
-   if (isLoading) {
-     content = <Loading />
-   } else if (isSuccess) {
+  if (isLoading) {
+    content = <Loading />;
+  } else if (isSuccess) {
     const date = new Date(trip?.startedDate);
-  const formattedDate = date.toLocaleString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    // minute: "numeric",
-    // second: "numeric",
-  });
-  content = (
-    <>
-      <Hero image={trip.coverPhoto} title={trip.title} />
-      <UNavbar />
-      <Overview
-        days={trip.numberOfDays}
-        price={trip.price}
-        journey={trip.journey}
-        date={formattedDate}
-        description={trip.description}
-        title={trip.title}
-        map={trip.location}
-      />
-       <ItineraryDetails
-        Days={trip.itineraryDetails}
-        onChildValue={handleEditItinerary}
-      />
-      <AboutPayment />
-      <AboutRoute />
-      {/* <Gallery photo={trip.photos} /> */}
-    </>
-  );
-} else if (isError) {
-  // content = <p>{error}</p>;
-}
-return (
-  <>
-    {/* <ApiProvider api={apiSlice}> */}
-    {/* <Navbar /> */}
-    {content}
-    {/* <Departure /> */}
-
-    {/* <Footer /> */}
-    {/* </ApiProvider> */}
-  </>
-);
+    const formattedDate = date.toLocaleString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      // minute: "numeric",
+      // second: "numeric",
+    });
+    content = (
+      <>
+        <Hero image={trip.coverPhoto} title={trip.title} />
+        <UNavbar />
+        <Overview
+          days={trip.numberOfDays}
+          price={trip.price}
+          journey={trip.journey}
+          date={formattedDate}
+          description={trip.description}
+          title={trip.title}
+          map={trip.location}
+        />
+        <ItineraryDetails
+          Days={trip.itineraryDetails}
+          onChildValue={handleEditItinerary}
+        />
+        <AboutPayment />
+        <AboutRoute />
+        {/* <Gallery photo={trip.photos} /> */}
+      </>
+    );
+  } else if (isError) {
+    // content = <p>{error}</p>;
+  }
+  return <>{content}</>;
 };
 
 export default UpcomingTrips;
