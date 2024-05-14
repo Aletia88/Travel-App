@@ -6,7 +6,10 @@ import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Link from "next/link";
 import { useGetTripsQuery } from "@/store/rutas.api";
 import axios from "axios";
-
+import { useDisclosure } from "@mantine/hooks";
+import { Modal } from "@mantine/core";
+import Test from '../data/Test.json'
+import ModalForm from "./ModalForm";
 
 interface Card {
   Image : any,
@@ -18,6 +21,7 @@ interface Card {
 }
 export function TripCard(prop: Card) {
   const [cover, setCover] = useState("");
+  const [opened, { open, close }] = useDisclosure(false);
 
   const handleDownload = async () => {
     try {
@@ -34,7 +38,7 @@ export function TripCard(prop: Card) {
       console.error("Error downloading file:", error);
     }
   };
-  const description = prop.Description?.slice(0, 70);
+  const description = prop.Description?.slice(0, 60);
 
   const date = new Date(`${prop.StartDate}`);
 
@@ -63,6 +67,7 @@ export function TripCard(prop: Card) {
  
   return (
     <CardContainer className="inter-var  max-w-96 mt-0 bg-black">
+     {/* {Test && Test.items?.map((trip: any) => ( <Link href={`/UpcomingTrips/${trip.id}`}></Link>))} */}
       <CardBody className=" shadow-md shadow-gray-100 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-[500px] rounded-xl p-6 border  ">
         <CardItem
           translateZ="50"
@@ -88,6 +93,7 @@ export function TripCard(prop: Card) {
           />
         </CardItem>
         <div className="flex justify-between items-center mt-10">
+        {/* {Test && Test.items?.map((trip: any) => ( <Link href={`/UpcomingTrips/${trip.id}`}> */}
           <CardItem
             translateZ={20}
             as={Link}
@@ -97,7 +103,9 @@ export function TripCard(prop: Card) {
           >
             See Trip →
           </CardItem>
+          {/* </Link>))} */}
           <CardItem
+          onClick={open}
             translateZ={20}
             as="button"
             className="px-4 py-2 rounded-xl bg-black border border-white dark:bg-white dark:text-black text-white text-xs font-bold"
@@ -106,6 +114,19 @@ export function TripCard(prop: Card) {
           </CardItem>
         </div>
       </CardBody>
+      {/* <Modal
+        opened={opened}
+        onClose={close}
+        mt= "lg"
+        withCloseButton = {false}
+        // sx={}
+        overlayProps={{
+          backgroundOpacity: 0.55,
+          blur: 3,
+        }}
+      >
+       <ModalForm />
+      </Modal> */}
     </CardContainer>
   );
 }

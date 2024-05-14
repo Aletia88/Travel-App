@@ -37,7 +37,7 @@ const AboutRoute = () => {
     };
 
     return (
-        <div className="flex flex-col mx-auto pt-4">
+        <div className="flex flex-col mx-auto pt-4 bg-white">
             <p className='m-auto text-gray-950	text-2xl font-semibold py-4'>Information about the route</p>
             {faqData.map((item, index) => (
                 <div key={index} className=" m-auto mb-4 pt-2 w-7/12 bg-white drop-shadow-lg">

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from "react";
 import countries from "../../data/Countries.json";
 import { useState } from "react";
@@ -7,7 +7,7 @@ import PhoneInput from "react-phone-number-input";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
-import { Button } from "@mantine/core";
+import { Button, Fieldset, Group, Radio, Slider, Textarea } from "@mantine/core";
 
 const travels = [
   { value: "Private", key: "1" },
@@ -98,6 +98,11 @@ const PersonalInfo: React.FC = () => {
       console.error(error);
     }
   };
+
+  const marks = [
+    { value: 0, label: "Adventure" },
+    { value: 10, label: "Comfort" },
+  ];
 
   return (
     <div className="flex flex-col w-9/12 m-auto py-8">
@@ -385,26 +390,119 @@ const PersonalInfo: React.FC = () => {
                 </div>
               </div>
             </div>
-                    
+          </div>
+          <div>
+            <Radio.Group
+              name="favoriteFramework"
+              label="Are you looking to take a trip accompanied by our team, agency coordinator and/or local team or do you prefer to do it without accompaniment (as long as the destination allows it)?"
+              // description="This is anonymous"
+              withAsterisk
+            >
+              <Group mt="xs">
+                <Radio value="yes" label="Yes" />
+                <Radio value="no" label="No" />
+              </Group>
+            </Radio.Group>
+          </div>
+          <div>
+            <p>What do you give most importance to while traveling?</p>
+            <div className="grid grid-cols-2 ">
+
+          
+            <div className="w-3/4 py-4 items-center justify-center ">
+              <p>Adventure/Comfort</p>
+              <Slider
+                defaultValue={0}
+                min={0}
+                max={10}
+                label={(value) => value.toFixed(1)}
+                step={0.1}
+               
+                marks={ [
+                  { value: 0, label: "Adventure" },
+                  { value: 10, label: "Comfort" },
+                ]
+              }
+              />
             </div>
-            <div className="  sm:col-span-3">
-              <label
-                htmlFor="last-name"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Description
-              </label>
-              <div className="mt-2 mx-4">
-                <textarea
-                  onChange={(e) => setDescription(e.target.value)}
-                  id="email"
-                  name="email"
-                  autoComplete="email"
-                  placeholder="Provide a brief description of your requirements..."
-                  className="block w-full outline-none rounded-md border-0 px-2 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
+            <div className="w-3/4 py-4 items-center justify-center ">
+              <p>Adventure/Comfort</p>
+              <Slider
+                defaultValue={0}
+                min={0}
+                max={10}
+                label={(value) => value.toFixed(1)}
+                step={0.1}
+               
+                marks={ [
+                  { value: 0, label: "Adventure" },
+                  { value: 10, label: "Comfort" },
+                ]
+              }
+              />
             </div>
+            <div className="w-3/4 py-4 items-center justify-center ">
+              <p>Adventure/Comfort</p>
+              <Slider
+                defaultValue={0}
+                min={0}
+                max={10}
+                label={(value) => value.toFixed(1)}
+                step={0.1}
+                marks={ [
+                  { value: 0, label: 'Adventure' },
+                  { value: 10, label: 'Comfort' },
+                ]
+              }
+              />
+            </div>
+            <div className="w-3/4 py-4 p-y-5 items-center justify-center ">
+              <p>Adventure/Comfort</p>
+              <Slider
+                defaultValue={0}
+                min={0}
+                max={10}
+                label={(value) => value.toFixed(1)}
+                step={0.1}
+               
+                marks={ [
+                  { value: 0, label: "Adventure" },
+                  { value: 10, label: "Comfort" },
+                ]
+              }
+              />
+            </div>
+            </div>
+          </div>
+          <div className="  sm:col-span-3">
+            {/* <label
+              htmlFor="last-name"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
+              Description
+            </label> */}
+            <div className="mt-2 mx-4">
+              {/* <textarea
+                onChange={(e) => setDescription(e.target.value)}
+                id="email"
+                name="email"
+                autoComplete="email"
+                placeholder="Provide a brief description of your requirements..."
+                className="block w-full outline-none rounded-md border-0 px-2 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              /> */}
+                <Fieldset
+      legend="Other preferences or things you want to tell us about"
+      // description="Input description"
+      // 
+    >
+      <Textarea 
+      className="w-full outline-none"
+     unstyled
+      placeholder="your message"
+      />
+    </Fieldset>
+            </div>
+          </div>
         </div>
       </div>
       {/* Terms and Condition */}
@@ -430,11 +528,9 @@ const PersonalInfo: React.FC = () => {
           >
             Confirm
           </Button>
-        ) : 
-        (
-            <Button
+        ) : (
+          <Button
             onClick={handleSubmit}
-           
             className={`   mt-4 bg-indigo-600 outline-none hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white transition ease-in-out duration-150 py-2 px-4 border border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto sm:text-sm`}
           >
             Confirm

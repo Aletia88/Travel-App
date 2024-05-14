@@ -26,7 +26,7 @@ const Overview = (prop: {days: number,
   ];
 
   return (
-    <div className="flex max-w-full space-x-4 mx-5 py-10 justify-center ">
+    <div className="flex max-w-full space-x-4 px-5 py-10 justify-center bg-white">
       <div className="w-[15%] bg-[#f5f5f5] flex flex-col h-[50%] align-baseline py-10 px-2">
         {Fields.map((field) => (
           <>
@@ -40,7 +40,10 @@ const Overview = (prop: {days: number,
       <div className="w-[55%] px-10">
         <h1 className="text-2xl font-bold pb-4 capitalize"> {prop.title}</h1>
         <p>{prop.description}</p>
+        <div className="h-5">
+
         <Border />
+        </div>
         {/* <button className=" w-3/12 m-auto bg-orange-400	 hover:bg-orange-500	 active:bg-emerald-400	 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition duration-300 transform-gpu hover:shadow-md active:translate-y-1">
           Reserve Place
         </button> */}

@@ -23,7 +23,7 @@ const ItineraryDetails = (props: any) => {
         }
     }, [props.Days, props.isDelete])
     return (
-        <div className='flex flex-col gap-6 m-auto min-w-full'>
+        <div className='flex flex-col gap-6 m-auto min-w-full bg-white'>
             <h1 className='m-auto text-gray-950 uppercase font-semibold	text-2xl '>Itinerary Details</h1>
             <div className='flex flex-row w-[80%] justify-center m-auto gap-4 bg-white'>
                 <div className='flex flex-col bg-gray-200 basis-1/3  overflow-y-auto h-64 '>
